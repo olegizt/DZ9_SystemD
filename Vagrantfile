@@ -28,6 +28,7 @@ Vagrant.configure("2") do |config|
         wget -P /etc/systemd/system/ https://raw.githubusercontent.com/olegizt/DZ9_SystemD/main/watchlog.service
         wget -P /etc/systemd/system/ https://raw.githubusercontent.com/olegizt/DZ9_SystemD/main/watchlog.timer
         systemctl start watchlog.timer
+        echo ALERT >> /var/log/watchlog.log
         rm /etc/sysconfig/spawn-fcgi
         wget -P /etc/sysconfig/ https://raw.githubusercontent.com/olegizt/DZ9_SystemD/main/spawn-fcgi
         wget -P /etc/systemd/system/ https://raw.githubusercontent.com/olegizt/DZ9_SystemD/main/spawn-fcgi.service
